@@ -2,16 +2,15 @@ package com.artmcar.control
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.artmcar.control.databinding.ActivityMainBinding
+import com.artmcar.control.databinding.ActivityFullscreenBinding
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class FullscreenActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityFullscreenBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityFullscreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
 
     }
 }
