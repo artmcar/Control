@@ -2,5 +2,31 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="description_background_color">#E7E4E9</color>
+    <color name="description_background_color">#CFD8DC</color>
+    <color name="expense_view_color">#FB5B39</color>
+    <color name="start_expense_switch_color">#EF3A19</color>
+    <color name="income_view_color">#31F95F</color>
+    <color name="start_income_switch_color">#72EF13</color>
+    <color name="operation_switch_color">#0000ffff</color>
+    <color name="currency_green">#0BD50B</color>
+    <color name="currency_red">#FF0000</color>
+    <color name="text_color">#ECEFF1</color>
+    <color name="fab_color">#4CAF50</color>
+
+    <!-- day theme -->
+    <color name="background_color">#FFFFFFFF</color>
+    <color name="elements_primary_color">#009688</color>
+    <color name="elements_secondary_color">#4CAF50</color>
+    <color name="ripple_color">#80CBC4</color>
+    <color name="dark_primary">#00796B</color>
+    <color name="accent_color">#00BFA5</color>
+
+    <!-- night theme -->
+    <color name="night_background_color">#B0BEC5</color>
+    <color name="night_elements_primary_color">#263238</color>
+    <color name="night_elements_secondary_color">#455A64</color>
+    <color name="night_ripple_color">#90A4AE</color>
+    <color name="night_dark_primary">#37474F</color>
+    <color name="night_accent_color">#263238</color>
+    <color name="night_hint_color">#546E7A</color>
 </resources>

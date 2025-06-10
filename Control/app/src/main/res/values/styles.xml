@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/white</item>
+    </style>
+
+    <style name="SpinnerTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:theme">@color/white</item>
+    </style>
+
+    <style name="PopupMenuTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>

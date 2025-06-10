@@ -7,7 +7,22 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.artmcar.control.MainFragment"
+        android:name="com.artmcar.control.fragments.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/eurFragment"
+        android:name="com.artmcar.control.fragments.EurFragment"
+        android:label="fragment_eur"
+        tools:layout="@layout/fragment_eur" />
+    <fragment
+        android:id="@+id/usdFragment"
+        android:name="com.artmcar.control.fragments.UsdFragment"
+        android:label="fragment_usd"
+        tools:layout="@layout/fragment_usd" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.artmcar.control.fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

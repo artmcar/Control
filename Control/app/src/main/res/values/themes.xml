@@ -1,8 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
     <style name="Base.Theme.Control" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/elements_primary_color</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="bottomNavigationStyle">@color/elements_secondary_color</item>
+        <item name="android:navigationBarColor">@color/elements_primary_color</item>
+        <item name="colorControlHighlight">@color/ripple_color</item>
+        <item name="colorPrimaryVariant">@color/elements_primary_color</item>
+        <item name="colorPrimaryDark">@color/dark_primary</item>
+        <item name="colorAccent">@color/accent_color</item>
+
+        <item name="android:windowBackground">@color/background_color</item>
+        <item name="actionBarSize">48dp</item>
     </style>
 
     <style name="Theme.Control" parent="Base.Theme.Control" />

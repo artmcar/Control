@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Control</string>
+    <string name="there_s_nothing_here_yet">Здесь пока пусто.</string>
+    <string name="amount">Сумма</string>
+    <string name="date">Дата</string>
+    <string name="date_colon">Дата:</string>
+    <string name="amount_income_colon">Ваш доход:</string>
+    <string name="amount_expense_colon">Ваш расход:</string>
+    <string name="type_income_colon">Тип дохода:</string>
+    <string name="type_expense_colon">Тип расхода:</string>
+    <string name="description">Описание</string>
+    <string name="description_colon">Описание:</string>
+    <string name="select_the_type_of_expenses">Выберите тип расхода</string>
+    <string name="year">Год</string>
+    <string name="month">Месяц</string>
+    <string name="day">День</string>
+    <string name="save">Сохранить</string>
+    <string name="no_description">Описание не было добавлено</string>
+    <string name="fields_not_fill">Ой! Возможна ошибка в заполнении полей</string>
+    <string name="expense_added">Расход был успешно добавлен!</string>
+    <string name="income_added">Доход был успешно добавлен!</string>
+    <string name="wrong_date">Похоже, что вы живете в будущем! Поменяйте дату</string>
+    <string name="parallel_date">Похоже, что вы живете в параллельной вселенной! Поменяйте дату</string>
+    <string name="sort_by_date">Сортировка по дате</string>
+    <string name="sort_by_amount">Сортировка по сумме</string>
+    <string name="delete_all">Удалить всё</string>
+    <string name="allert_yes">Да</string>
+    <string name="allert_no">Нет</string>
+    <string name="delete_question">Удалить эту запись?</string>
+    <string name="are_you_sure_to_delete">Вы уверены, что хотите удалить это?</string>
+    <string name="delete_everything">Удалить всё?</string>
+    <string name="are_you_sure_to_delete_everything">Вы уверены, что хотите всё удалить?</string>
+    <string name="successfully_deleted">Запись успешно удалена!</string>
+    <string name="successfully_deleted_everything">Все записи были успешно удалены!</string>
+    <string name="expense_income">Расход/Доход</string>
+    <string name="settings_text">Это приложение позволяет контролировать расходы и доходы, следить за актуальными курсами евро и доллара. В приложении можно посмотреть динамику изменения курсов между текущим днем и предыдущим.</string>
+    <string name="eur_to_rub">Курс EUR к RUB</string>
+    <string name="usd_to_rub">Курс USD к RUB</string>
+    <string name="settings_toolbar">Настройки</string>
+    <string name="currency_error">Ошибка при загрузки курса на</string>
+    <string name="error">Ошибка</string>
+
+    <string-array name="expenses_type">
+        <item>Другое</item>
+        <item>Доставка еды</item>
+        <item>Здоровье</item>
+        <item>Канцтовары</item>
+        <item>Обед</item>
+        <item>Одежда</item>
+        <item>Парикмахерская</item>
+        <item>Продукты питания и прочие товары</item>
+        <item>Развлечения</item>
+        <item>Связь</item>
+        <item>Техника</item>
+        <item>Транспорт</item>
+    </string-array>
+
+    <string-array name="months">
+        <item>Янв.</item>
+        <item>Фев.</item>
+        <item>Мар.</item>
+        <item>Апр.</item>
+        <item>Май</item>
+        <item>Июн.</item>
+        <item>Июл.</item>
+        <item>Авг.</item>
+        <item>Сен.</item>
+        <item>Окт.</item>
+        <item>Ноя.</item>
+        <item>Дек.</item>
+    </string-array>
+
+</resources>

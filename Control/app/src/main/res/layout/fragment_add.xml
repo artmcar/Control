@@ -5,53 +5,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddFragment">
+    tools:context=".fragments.AddFragment">
 
     <EditText
         android:id="@+id/amount_et"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/amount"
         android:importantForAutofill="no"
-        android:inputType="text"
+        android:inputType="numberDecimal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/add_toolbar" />
 
     <Spinner
         android:id="@+id/currency_spinner"
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="12dp"
+        android:entries="@array/currency"
+        android:spinnerMode="dialog"
+        android:theme="@style/SpinnerTheme"
         app:layout_constraintBottom_toBottomOf="@+id/amount_et"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/amount_et"
         app:layout_constraintTop_toTopOf="@+id/amount_et"
         app:layout_constraintVertical_bias="0.029" />
 
     <EditText
-        android:id="@+id/date_et"
+        android:id="@+id/year_et"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="@string/date"
+        android:ems="4"
+        android:hint="@string/year"
         android:importantForAutofill="no"
         android:inputType="date"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/amount_et" />
 
+    <EditText
+        android:id="@+id/month_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/month"
+        android:importantForAutofill="no"
+        android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="@+id/year_et"
+        app:layout_constraintStart_toEndOf="@+id/year_et"
+        app:layout_constraintTop_toTopOf="@+id/year_et" />
+
+    <EditText
+        android:id="@+id/day_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/day"
+        android:importantForAutofill="no"
+        android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="@+id/year_et"
+        app:layout_constraintStart_toEndOf="@+id/month_et"
+        app:layout_constraintTop_toTopOf="@+id/year_et" />
+
     <Spinner
         android:id="@+id/type_spinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:entries="@array/expenses_type"
+        android:spinnerMode="dialog"
+        android:layout_marginTop="8dp"
+        android:theme="@style/SpinnerTheme"
         app:layout_constraintEnd_toEndOf="@+id/type_tv"
         app:layout_constraintStart_toStartOf="@+id/type_tv"
         app:layout_constraintTop_toBottomOf="@+id/type_tv" />
@@ -61,28 +89,81 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="24dp"
         android:text="@string/select_the_type_of_expenses"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_et" />
+        app:layout_constraintTop_toBottomOf="@+id/operation_tv" />
 
     <EditText
         android:id="@+id/description_et"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:inputType="textMultiLine"
+        android:background="@color/description_background_color"
         android:ems="10"
         android:gravity="top|left"
-        android:background="@color/description_background_color"
         android:hint="@string/description"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/type_spinner" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/add_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:popupTheme="@style/PopupMenuTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/set_data_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:clickable="true"
+        app:fabCustomSize="40dp"
+        android:tint="@color/white"
+        android:backgroundTint="@color/elements_secondary_color"
+        app:layout_constraintBottom_toBottomOf="@+id/year_et"
+        app:layout_constraintStart_toEndOf="@+id/day_et"
+        app:layout_constraintTop_toTopOf="@+id/year_et"
+        app:srcCompat="@drawable/ic_calendar_today" />
+
+    <TextView
+        android:id="@+id/operation_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/expense_income"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/year_et" />
+
+    <Switch
+        android:id="@+id/exp_inc_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:thumb="@drawable/custom_switch"
+        app:layout_constraintBottom_toBottomOf="@+id/operation_tv"
+        app:layout_constraintStart_toEndOf="@+id/operation_tv"
+        app:layout_constraintTop_toTopOf="@+id/operation_tv"
+        app:layout_constraintVertical_bias="1.0"
+        app:useMaterialThemeColors="false"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
