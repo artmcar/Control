@@ -104,8 +104,9 @@ class MainActivity : AppCompatActivity() {
     private fun updateEurUI(isIncreased: Boolean?, currentRate: Double?) {
         val red = ContextCompat.getColor(this, R.color.currency_red)
         val green = ContextCompat.getColor(this, R.color.currency_green)
+        val error_string = getString(R.string.error)
 
-        binding.eurTv.text = currentRate?.let{String.format("%.4f", it)} ?: "Nan"
+        binding.eurTv.text = currentRate?.let{String.format("%.4f", it)} ?: error_string
 
         when (isIncreased) {
             true -> {
