@@ -1,6 +1,8 @@
 package com.artmcar.control.db.main
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
+import java.math.BigDecimal
 
 class MainRepository(private val mainDao: MainDao) {
     val getAllExpenses : LiveData<List<MainFields>> = mainDao.getAllExpenses()
@@ -25,4 +27,25 @@ class MainRepository(private val mainDao: MainDao) {
     suspend fun deleteAllExpenses(){
         mainDao.deleteAllExpenses()
     }
+
+    fun getTotalExpensesByCurrency(currency: String): LiveData<BigDecimal> {
+        val result = MediatorLiveData<BigDecimal>()
+        val source = mainDao.getExpensesAmountsByCurrency(currency)
+        result.addSource(source) { list ->
+            val sum = list.fold(BigDecimal.ZERO) { acc, item -> acc + item }
+            result.value = sum
+        }
+        return result
+    }
+
+    fun getTotalIncomesByCurrency(currency: String): LiveData<BigDecimal> {
+        val result = MediatorLiveData<BigDecimal>()
+        val source = mainDao.getIncomesAmountsByCurrency(currency)
+        result.addSource(source) { list ->
+            val sum = list.fold(BigDecimal.ZERO) { acc, item -> acc + item }
+            result.value = sum
+        }
+        return result
+    }
+
 }

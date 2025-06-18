@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
     private lateinit var eurViewModel: EurViewModel
-    private var lockScreenNeeded = true
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,6 +55,9 @@ class MainActivity : AppCompatActivity() {
         }
         binding.settingsIb.setOnClickListener{
             navController.navigate(R.id.settingsFragment)
+        }
+        binding.statisticsIb.setOnClickListener{
+            navController.navigate(R.id.statisticsFragment)
         }
 
 

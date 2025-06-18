@@ -45,6 +45,13 @@
     <string name="clear">Очистить</string>
     <string name="wrong_pin">Неправильный пин-код!</string>
     <string name="set_pin">Пин-код установлен!</string>
+    <string name="rub">₽</string>
+    <string name="usd">$</string>
+    <string name="eur">€</string>
+    <string name="statistics">Статистика</string>
+    <string name="difference">Разница:</string>
+    <string name="all_incomes">Всего доходов:</string>
+    <string name="all_expenses">Всего расходов:</string>
 
     <string-array name="expenses_type">
         <item>Другое</item>

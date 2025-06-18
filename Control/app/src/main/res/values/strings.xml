@@ -45,6 +45,13 @@
     <string name="clear">Clear</string>
     <string name="wrong_pin">Wrong pin code!</string>
     <string name="set_pin">The pin code has been set!</string>
+    <string name="rub">₽</string>
+    <string name="usd">$</string>
+    <string name="eur">€</string>
+    <string name="statistics">Statistics</string>
+    <string name="difference">Difference:</string>
+    <string name="all_incomes">All incomes:</string>
+    <string name="all_expenses">All expenses:</string>
 
     <string-array name="currency">
         <item>₽</item>
@@ -81,7 +88,6 @@
         <item>Nov</item>
         <item>Dec</item>
     </string-array>
-
 
 
 </resources>

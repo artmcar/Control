@@ -6,6 +6,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
+import java.math.BigDecimal
 
 @Dao
 interface MainDao {
@@ -35,4 +36,10 @@ interface MainDao {
 
     @Query("SELECT * FROM expenses ORDER BY year DESC, month DESC, day DESC")
     fun getByBackDate(): LiveData<List<MainFields>>
+
+    @Query("SELECT amount FROM expenses WHERE operation = 'Expense' AND currency = :currency")
+    fun getExpensesAmountsByCurrency(currency: String): LiveData<List<BigDecimal>>
+
+    @Query("SELECT amount FROM expenses WHERE operation = 'Income' AND currency = :currency")
+    fun getIncomesAmountsByCurrency(currency: String): LiveData<List<BigDecimal>>
 }

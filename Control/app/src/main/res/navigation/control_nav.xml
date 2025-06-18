@@ -46,4 +46,9 @@
         android:name="com.artmcar.control.fragments.PinSetupFragment"
         android:label="fragment_pin_setup"
         tools:layout="@layout/fragment_pin_setup" />
+    <fragment
+        android:id="@+id/statisticsFragment"
+        android:name="com.artmcar.control.fragments.StatisticsFragment"
+        android:label="fragment_statistics"
+        tools:layout="@layout/fragment_statistics" />
 </navigation>
