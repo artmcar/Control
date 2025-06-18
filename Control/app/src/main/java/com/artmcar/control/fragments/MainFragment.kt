@@ -9,9 +9,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.artmcar.control.activities.FullscreenActivity
 import com.artmcar.control.R
@@ -82,7 +84,16 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val prefs = SecurePrefsUtil.getSecurePrefs(requireContext())
+        val pin = prefs.getString("pin", null)
+        val lockedNextLaunch = prefs.getBoolean("locked_next_launch", false)
+
         binding.mainToolbar.inflateMenu(R.menu.main_menu)
+        val lockItem = binding.mainToolbar.menu.findItem(R.id.action_unlock)
+        lockItem?.icon = ContextCompat.getDrawable(
+            requireContext(),
+            if (lockedNextLaunch) R.drawable.ic_lock else R.drawable.ic_unlock
+        )
         binding.mainToolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.action_delete_all -> {
@@ -111,11 +122,24 @@ class MainFragment : Fragment() {
                     }
                     true
                 }
+                R.id.action_unlock -> {
+                    if (pin == null) {
+                        findNavController().navigate(R.id.action_mainFragment_to_pinSetupFragment)
+                    } else {
+                        val newLockedState = !lockedNextLaunch
+                        SecurePrefsUtil.setLockedNextLaunch(requireContext(), newLockedState)
+                        it.icon = ContextCompat.getDrawable(
+                            requireContext(),
+                            if (newLockedState) R.drawable.ic_lock else R.drawable.ic_unlock
+                        )
+                    }
+                    true
+                }
                 else -> false
             }
         }
 
-        //валюты
+        //Rates
         val db = CurrencyDatabase.getDatabase(requireContext())
         val service = CurrencyService.create()
         val repository = CurrencyRepository(service, db)

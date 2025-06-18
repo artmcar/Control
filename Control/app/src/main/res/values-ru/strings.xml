@@ -38,8 +38,13 @@
     <string name="eur_to_rub">Курс EUR к RUB</string>
     <string name="usd_to_rub">Курс USD к RUB</string>
     <string name="settings_toolbar">Настройки</string>
-    <string name="currency_error">Ошибка при загрузки курса на</string>
     <string name="error">Ошибка</string>
+    <string name="lock">Разблокировать/Заблокировать</string>
+    <string name="set_up_a_pin_code">Установить пин-код</string>
+    <string name="enter_the_pin_code">Введите пин-код</string>
+    <string name="clear">Очистить</string>
+    <string name="wrong_pin">Неправильный пин-код!</string>
+    <string name="set_pin">Пин-код установлен!</string>
 
     <string-array name="expenses_type">
         <item>Другое</item>
@@ -70,5 +75,7 @@
         <item>Ноя.</item>
         <item>Дек.</item>
     </string-array>
+
+
 
 </resources>

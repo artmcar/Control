@@ -16,7 +16,7 @@ class CurrencyViewModel(private val repository: CurrencyRepository) : ViewModel(
             dates.forEach { date ->
                 val error = repository.fetchAndStoreRates(date)
                 if (error != null) {
-                    _errorFlow.emit("Ошибка загрузки курсов на $date: $error")
+                    _errorFlow.emit("Error loading rates on $date: $error")
                 }
             }
         }

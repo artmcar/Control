@@ -1,5 +1,6 @@
 package com.artmcar.control.activities
 
+
 import android.os.Bundle
 import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
@@ -14,11 +15,14 @@ import com.artmcar.control.db.currency_rate.EurViewModel
 import com.artmcar.control.db.currency_rate.EurViewModelFactory
 import com.artmcar.control.db.currency_rate.UsdViewModel
 import com.artmcar.control.db.currency_rate.UsdViewModelFactory
+import com.artmcar.control.fragments.SecurePrefsUtil
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
     private lateinit var eurViewModel: EurViewModel
+    private var lockScreenNeeded = true
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,23 +32,42 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment) as NavHostFragment
         navController = navHostFragment.navController
 
+        SecurePrefsUtil.applyPendingLock(this)
+
+        if (SecurePrefsUtil.isMainFragmentLocked(this)) {
+            navController.navigate(R.id.pinEntryFragment)
+        } else {
+            navController.navigate(R.id.mainFragment)
+        }
+
         binding.usdIb.setOnClickListener{
             navController.navigate(R.id.usdFragment)
         }
         binding.eurIb.setOnClickListener{
             navController.navigate(R.id.eurFragment)
         }
-        binding.homeIb.setOnClickListener{
-            navController.navigate(R.id.mainFragment)
+        binding.homeIb.setOnClickListener {
+            if (SecurePrefsUtil.isMainFragmentLocked(this)) {
+                navController.navigate(R.id.pinEntryFragment)
+            } else {
+                navController.popBackStack(R.id.mainFragment, false)
+            }
         }
         binding.settingsIb.setOnClickListener{
             navController.navigate(R.id.settingsFragment)
         }
 
-        onBackPressedDispatcher.addCallback(this){
-            if (navController.currentDestination?.id != R.id.mainFragment) {
-                navController.popBackStack(R.id.mainFragment, false)
-            }else {
+
+
+        onBackPressedDispatcher.addCallback(this) {
+            val currentDest = navController.currentDestination?.id
+            if (currentDest != R.id.mainFragment) {
+                if (SecurePrefsUtil.isMainFragmentLocked(this@MainActivity)) {
+                    navController.navigate(R.id.pinEntryFragment)
+                } else {
+                    navController.popBackStack(R.id.mainFragment, false)
+                }
+            } else {
                 finish()
             }
         }
@@ -129,5 +152,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+
+    fun disableLock() {
+        SecurePrefsUtil.setLocked(this, false)
+    }
+
 
 }

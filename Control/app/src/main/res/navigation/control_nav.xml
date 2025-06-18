@@ -9,7 +9,14 @@
         android:id="@+id/mainFragment"
         android:name="com.artmcar.control.fragments.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_pinEntryFragment"
+            app:destination="@id/pinEntryFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_pinSetupFragment"
+            app:destination="@id/pinSetupFragment" />
+    </fragment>
     <fragment
         android:id="@+id/eurFragment"
         android:name="com.artmcar.control.fragments.EurFragment"
@@ -25,4 +32,18 @@
         android:name="com.artmcar.control.fragments.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/pinEntryFragment"
+        android:name="com.artmcar.control.fragments.PinEntryFragment"
+        android:label="fragment_pin_entry"
+        tools:layout="@layout/fragment_pin_entry" >
+        <action
+            android:id="@+id/action_pinEntryFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pinSetupFragment"
+        android:name="com.artmcar.control.fragments.PinSetupFragment"
+        android:label="fragment_pin_setup"
+        tools:layout="@layout/fragment_pin_setup" />
 </navigation>

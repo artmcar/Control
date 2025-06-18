@@ -35,7 +35,7 @@ class UpdateFragment : Fragment() {
 
         mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-        //Получение данных
+        //Getting the data
         val item = requireActivity().intent.getSerializableExtra("item_data") as? MainFields
         item?.let {
             binding.amountEt.setText(it.amount.toPlainString())

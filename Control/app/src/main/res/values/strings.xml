@@ -38,8 +38,13 @@
     <string name="eur_to_rub">EUR to RUB rate</string>
     <string name="usd_to_rub">USD to RUB rate</string>
     <string name="settings_toolbar">Settings</string>
-    <string name="currency_error">Error loading courses for</string>
     <string name="error">Error</string>
+    <string name="lock">Unlock/Lock</string>
+    <string name="set_up_a_pin_code">Set up a pin code</string>
+    <string name="enter_the_pin_code">Enter the pin code</string>
+    <string name="clear">Clear</string>
+    <string name="wrong_pin">Wrong pin code!</string>
+    <string name="set_pin">The pin code has been set!</string>
 
     <string-array name="currency">
         <item>₽</item>
@@ -76,6 +81,7 @@
         <item>Nov</item>
         <item>Dec</item>
     </string-array>
+
 
 
 </resources>

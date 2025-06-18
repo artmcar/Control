@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.PinSetupFragment">
+
+    <TextView
+        android:id="@+id/title_setup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:text="@string/set_up_a_pin_code"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/codeLayout_setup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_setup">
+
+        <EditText
+            android:id="@+id/digit1_setup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="13dp"
+            android:layout_weight="1"
+            android:imeOptions="actionDone"
+            android:maxLength="2"
+            android:maxLines="1"
+            android:inputType="number"
+            android:digits="0123456789"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/digit2_setup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="13dp"
+            android:layout_weight="1"
+            android:imeOptions="actionDone"
+            android:maxLength="2"
+            android:maxLines="1"
+            android:inputType="number"
+            android:digits="0123456789"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/digit3_setup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="13dp"
+            android:layout_weight="1"
+            android:imeOptions="actionDone"
+            android:maxLength="2"
+            android:maxLines="1"
+            android:inputType="number"
+            android:digits="0123456789"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/digit4_setup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:imeOptions="actionDone"
+            android:maxLength="2"
+            android:maxLines="1"
+            android:inputType="number"
+            android:digits="0123456789"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/clearButton_setup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/clear"
+        app:layout_constraintEnd_toEndOf="@+id/codeLayout_setup"
+        app:layout_constraintStart_toStartOf="@id/codeLayout_setup"
+        app:layout_constraintTop_toBottomOf="@id/codeLayout_setup" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
