@@ -20,7 +20,7 @@ abstract class CurrencyDatabase : RoomDatabase() {
                     context.applicationContext,
                     CurrencyDatabase::class.java,
                     "currency_database"
-                ).build()
+                ).fallbackToDestructiveMigration().build()
                 INSTANCE = instance
                 instance
             }

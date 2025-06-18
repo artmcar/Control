@@ -10,6 +10,7 @@
     <color name="operation_switch_color">#0000ffff</color>
     <color name="currency_green">#0BD50B</color>
     <color name="currency_red">#FF0000</color>
+    <color name="loading_color">#FFF245</color>
     <color name="text_color">#ECEFF1</color>
     <color name="fab_color">#4CAF50</color>
 

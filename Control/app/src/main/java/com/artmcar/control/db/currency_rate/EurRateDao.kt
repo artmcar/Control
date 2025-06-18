@@ -7,7 +7,7 @@ import androidx.room.Query
 
 @Dao
 interface EurRateDao {
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(rate: EurRate)
 
     @Query("SELECT * FROM eur_rates WHERE date = :date LIMIT 1")

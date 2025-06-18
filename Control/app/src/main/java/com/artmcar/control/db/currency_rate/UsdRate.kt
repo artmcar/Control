@@ -6,9 +6,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "usd_rates")
 data class UsdRate(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int = 0,
-    @ColumnInfo(name = "date") val date: String,
+    @PrimaryKey
+    val date: String,
     @ColumnInfo(name = "numCode") val numCode: String,
     @ColumnInfo(name = "charCode") val charCode: String,
     @ColumnInfo(name = "nominal") val nominal: Int,
