@@ -19,7 +19,9 @@
     <string name="no_description">No description has been added</string>
     <string name="fields_not_fill">"Oops! Probably all fields are not filled in or filled in incorrectly"</string>
     <string name="expense_added">The expense has been successfully added!</string>
+    <string name="expense_updated">The expense has been successfully updated!</string>
     <string name="income_added">The income has been successfully added!</string>
+    <string name="income_updated">The income has been successfully updated!</string>
     <string name="wrong_date">It seems you\'re living in the future! Change the date</string>
     <string name="parallel_date">It seems you\'re living in a parallel universe! Change the date</string>
     <string name="sort_by_date">Sort by date</string>

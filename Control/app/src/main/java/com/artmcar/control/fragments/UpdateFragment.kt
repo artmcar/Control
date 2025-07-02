@@ -144,10 +144,10 @@ class UpdateFragment : Fragment() {
                         amount, year, month, day, selected_currency, selected_type, description, operation)
                     mainViewModel.updateExpense(expense)
                     if (operation == "Expense"){
-                        Toast.makeText(requireContext(), R.string.expense_added, Toast.LENGTH_LONG).show()
+                        Toast.makeText(requireContext(), R.string.expense_updated, Toast.LENGTH_LONG).show()
                     }
                     else{
-                        Toast.makeText(requireContext(), R.string.income_added, Toast.LENGTH_LONG).show()
+                        Toast.makeText(requireContext(), R.string.income_updated, Toast.LENGTH_LONG).show()
                     }
                     requireActivity().onBackPressedDispatcher.onBackPressed()
                 }

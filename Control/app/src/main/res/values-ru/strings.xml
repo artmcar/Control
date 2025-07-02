@@ -17,9 +17,11 @@
     <string name="day">День</string>
     <string name="save">Сохранить</string>
     <string name="no_description">Описание не было добавлено</string>
-    <string name="fields_not_fill">Ой! Возможна ошибка в заполнении полей</string>
+    <string name="fields_not_fill">Ой! Ошибка в заполнении полей</string>
     <string name="expense_added">Расход был успешно добавлен!</string>
+    <string name="expense_updated">Расход был успешно обновлен!</string>
     <string name="income_added">Доход был успешно добавлен!</string>
+    <string name="income_updated">Доход был успешно обновлен!</string>
     <string name="wrong_date">Похоже, что вы живете в будущем! Поменяйте дату</string>
     <string name="parallel_date">Похоже, что вы живете в параллельной вселенной! Поменяйте дату</string>
     <string name="sort_by_date">Сортировка по дате</string>
