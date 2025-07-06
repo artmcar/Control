@@ -43,6 +43,10 @@ class StatisticsFragment : Fragment() {
         binding.eurIncomesAmountTv.movementMethod = ScrollingMovementMethod()
         binding.eurDifferenceAmountTv.movementMethod = ScrollingMovementMethod()
 
+        binding.amdExpensesAmountTv.movementMethod = ScrollingMovementMethod()
+        binding.amdIncomesAmountTv.movementMethod = ScrollingMovementMethod()
+        binding.amdDifferenceAmountTv.movementMethod = ScrollingMovementMethod()
+
         viewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
         viewModel.rubExpenses.observe(viewLifecycleOwner) {
             binding.rubExpensesAmountTv.text = format(it, getString(R.string.rub))
@@ -70,6 +74,15 @@ class StatisticsFragment : Fragment() {
             binding.eurIncomesAmountTv.text = format(it, getString(R.string.eur))
             updateDifference()
         }
+
+        viewModel.amdExpenses.observe(viewLifecycleOwner) {
+            binding.amdExpensesAmountTv.text = format(it, getString(R.string.amd))
+            updateDifference()
+        }
+        viewModel.amdIncomes.observe(viewLifecycleOwner) {
+            binding.amdIncomesAmountTv.text = format(it, getString(R.string.amd))
+            updateDifference()
+        }
     }
     private fun updateDifference() {
         val rub = (viewModel.rubIncomes.value ?: BigDecimal.ZERO)
@@ -78,10 +91,13 @@ class StatisticsFragment : Fragment() {
             .subtract(viewModel.usdExpenses.value ?: BigDecimal.ZERO)
         val eur = (viewModel.eurIncomes.value ?: BigDecimal.ZERO)
             .subtract(viewModel.eurExpenses.value ?: BigDecimal.ZERO)
+        val amd = (viewModel.amdIncomes.value ?: BigDecimal.ZERO)
+            .subtract(viewModel.amdExpenses.value ?: BigDecimal.ZERO)
 
         updateDifferenceTextView(binding.rubDifferenceAmountTv, rub, getString(R.string.rub))
         updateDifferenceTextView(binding.usdDifferenceAmountTv, usd, getString(R.string.usd))
         updateDifferenceTextView(binding.eurDifferenceAmountTv, eur, getString(R.string.eur))
+        updateDifferenceTextView(binding.amdDifferenceAmountTv, amd, getString(R.string.amd))
     }
 
     private fun format(value: BigDecimal?, currency: String): String {

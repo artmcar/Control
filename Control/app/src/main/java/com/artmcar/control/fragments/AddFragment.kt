@@ -52,6 +52,7 @@ class AddFragment : Fragment() {
                     0 -> "RUB"
                     1 -> "USD"
                     2 -> "EUR"
+                    3 -> "AMD"
                     else -> "RUB"
                 }
             }
@@ -76,7 +77,7 @@ class AddFragment : Fragment() {
         }
         binding.addToolbar.setOnMenuItemClickListener {
             when (it.itemId) {
-                R.id.action_save_poem -> {
+                R.id.action_save_item -> {
                     insertDataToDatabase()
                     true
                 }

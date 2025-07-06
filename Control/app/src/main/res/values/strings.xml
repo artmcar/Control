@@ -50,6 +50,7 @@
     <string name="rub">₽</string>
     <string name="usd">$</string>
     <string name="eur">€</string>
+    <string name="amd">֏</string>
     <string name="statistics">Statistics</string>
     <string name="difference">Difference:</string>
     <string name="all_incomes">All incomes:</string>
@@ -59,6 +60,7 @@
         <item>₽</item>
         <item>$</item>
         <item>€</item>
+        <item>֏</item>
     </string-array>
 
     <string-array name="expenses_type">

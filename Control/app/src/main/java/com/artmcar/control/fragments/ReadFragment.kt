@@ -32,6 +32,7 @@ class ReadFragment : Fragment() {
                 "RUB" -> currency_array[0]
                 "USD" -> currency_array[1]
                 "EUR" -> currency_array[2]
+                "AMD" -> currency_array[3]
                 else -> currency_array[0]
             }
             binding.readDate.text = date

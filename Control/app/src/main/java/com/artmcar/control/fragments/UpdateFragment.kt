@@ -49,6 +49,7 @@ class UpdateFragment : Fragment() {
                 "RUB" -> 0
                 "USD" -> 1
                 "EUR" -> 2
+                "AMD" -> 3
                 else -> 0
             }
             binding.currencySpinner.setSelection(currencyIndex)
@@ -82,6 +83,7 @@ class UpdateFragment : Fragment() {
                     0 -> "RUB"
                     1 -> "USD"
                     2 -> "EUR"
+                    3 -> "AMD"
                     else -> "RUB"
                 }
             }
@@ -106,7 +108,7 @@ class UpdateFragment : Fragment() {
         }
         binding.addToolbar.setOnMenuItemClickListener {
             when (it.itemId) {
-                R.id.action_save_poem -> {
+                R.id.action_save_item -> {
                     updateItem()
                     true
                 }

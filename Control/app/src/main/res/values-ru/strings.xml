@@ -36,7 +36,7 @@
     <string name="successfully_deleted">Запись успешно удалена!</string>
     <string name="successfully_deleted_everything">Все записи были успешно удалены!</string>
     <string name="expense_income">Расход/Доход</string>
-    <string name="settings_text">Это приложение позволяет контролировать расходы и доходы, следить за актуальными курсами евро и доллара. В приложении можно посмотреть динамику изменения курсов между текущим днем и предыдущим.</string>
+    <string name="settings_text">Это приложение позволяет контролировать расходы и доходы, следить за актуальными курсами евро и доллара.\n\nВ приложении можно посмотреть динамику изменения курсов между текущим днем и предыдущим.</string>
     <string name="eur_to_rub">Курс EUR к RUB</string>
     <string name="usd_to_rub">Курс USD к RUB</string>
     <string name="settings_toolbar">Настройки</string>
@@ -50,6 +50,7 @@
     <string name="rub">₽</string>
     <string name="usd">$</string>
     <string name="eur">€</string>
+    <string name="amd">֏</string>
     <string name="statistics">Статистика</string>
     <string name="difference">Разница:</string>
     <string name="all_incomes">Всего доходов:</string>
