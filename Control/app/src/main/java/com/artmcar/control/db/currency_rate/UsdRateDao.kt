@@ -13,6 +13,6 @@ interface UsdRateDao {
     @Query("SELECT * FROM usd_rates WHERE date = :date LIMIT 1")
     suspend fun getRateByDate(date: String): UsdRate?
 
-    @Query("SELECT * FROM usd_rates ORDER BY date DESC")
+    @Query("SELECT * FROM usd_rates ORDER BY year DESC, month DESC, day DESC")
     suspend fun getAllRatesDesc(): List<UsdRate>
 }

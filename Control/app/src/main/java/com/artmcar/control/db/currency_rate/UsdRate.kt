@@ -8,6 +8,9 @@ import androidx.room.PrimaryKey
 data class UsdRate(
     @PrimaryKey
     val date: String,
+    @ColumnInfo(name = "year") val year: Int,
+    @ColumnInfo(name = "month") val month: Int,
+    @ColumnInfo(name = "day") val day: Int,
     @ColumnInfo(name = "numCode") val numCode: String,
     @ColumnInfo(name = "charCode") val charCode: String,
     @ColumnInfo(name = "nominal") val nominal: Int,

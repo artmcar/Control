@@ -19,10 +19,15 @@ class CurrencyRepository(
             val usd = response.valuteList?.find { it.charCode == "USD" }
             val eur = response.valuteList?.find { it.charCode == "EUR" }
 
+            val (day, month, year) = date.split("/").map { it.toInt() }
+
             usd?.let {
                 db.usdRateDao().insert(
                     UsdRate(
                         date = date,
+                        year = year,
+                        month = month,
+                        day = day,
                         numCode = it.numCode.toString(),
                         charCode = it.charCode,
                         nominal = it.nominal,
@@ -37,6 +42,9 @@ class CurrencyRepository(
                 db.eurRateDao().insert(
                     EurRate(
                         date = date,
+                        year = year,
+                        month = month,
+                        day = day,
                         numCode = it.numCode.toString(),
                         charCode = it.charCode,
                         nominal = it.nominal,

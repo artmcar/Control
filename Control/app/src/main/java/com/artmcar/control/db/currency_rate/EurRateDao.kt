@@ -13,6 +13,6 @@ interface EurRateDao {
     @Query("SELECT * FROM eur_rates WHERE date = :date LIMIT 1")
     suspend fun getRateByDate(date: String): EurRate?
 
-    @Query("SELECT * FROM eur_rates ORDER BY date DESC")
+    @Query("SELECT * FROM eur_rates ORDER BY year DESC, month DESC, day DESC")
     suspend fun getAllRatesDesc(): List<EurRate>
 }

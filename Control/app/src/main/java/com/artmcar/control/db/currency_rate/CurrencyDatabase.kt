@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [UsdRate::class, EurRate::class], version = 2)
+@Database(entities = [UsdRate::class, EurRate::class], version = 4)
 abstract class CurrencyDatabase : RoomDatabase() {
     abstract fun usdRateDao(): UsdRateDao
     abstract fun eurRateDao(): EurRateDao
