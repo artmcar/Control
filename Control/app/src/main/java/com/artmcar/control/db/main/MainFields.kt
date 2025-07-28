@@ -1,3 +1,6 @@
+//MainFields
+
+
 package com.artmcar.control.db.main
 
 import androidx.room.ColumnInfo
@@ -15,6 +18,9 @@ data class MainFields(
     @ColumnInfo(name = "year") val year: Int,
     @ColumnInfo(name = "month") val month: Int,
     @ColumnInfo(name = "day") val day: Int,
+    @ColumnInfo(name = "hour", defaultValue = "0") val hour: Int,
+    @ColumnInfo(name = "minute", defaultValue = "0" ) val minute: Int,
+    @ColumnInfo(name = "second", defaultValue = "0") val second: Int,
     @ColumnInfo(name = "currency") val currency: String,
     @ColumnInfo(name = "type") val type: String,
     @ColumnInfo(name = "description") val description: String,

@@ -22,7 +22,7 @@ interface MainDao {
     @Query("DELETE FROM expenses")
     suspend fun deleteAllExpenses()
 
-    @Query("SELECT * FROM expenses ORDER BY year DESC, month DESC, day DESC")
+    @Query("SELECT * FROM expenses ORDER BY year DESC, month DESC, day DESC, hour DESC, minute DESC, second DESC")
     fun getAllExpenses(): LiveData<List<MainFields>>
 
     @Query("SELECT * FROM expenses ORDER BY amount * 1 DESC")
@@ -31,10 +31,10 @@ interface MainDao {
     @Query("SELECT * FROM expenses ORDER BY amount * 1 ASC")
     fun getByBackAmount(): LiveData<List<MainFields>>
 
-    @Query("SELECT * FROM expenses ORDER BY year ASC, month ASC, day ASC")
+    @Query("SELECT * FROM expenses ORDER BY year ASC, month ASC, day ASC, hour ASC, minute ASC, second ASC")
     fun getByDate(): LiveData<List<MainFields>>
 
-    @Query("SELECT * FROM expenses ORDER BY year DESC, month DESC, day DESC")
+    @Query("SELECT * FROM expenses ORDER BY year DESC, month DESC, day DESC, hour DESC, minute DESC, second DESC")
     fun getByBackDate(): LiveData<List<MainFields>>
 
     @Query("SELECT amount FROM expenses WHERE operation = 'Expense' AND currency = :currency")

@@ -28,6 +28,7 @@ class ReadFragment : Fragment() {
         item?.let {
             val is_expense = it.operation == "Expense"
             val date = "${it.day} ${date_array[it.month - 1]} ${it.year}"
+            val time = String.format("%02d:%02d:%02d", it.hour, it.minute, it.second)
             val currency = when(it.currency){
                 "RUB" -> currency_array[0]
                 "USD" -> currency_array[1]
@@ -36,6 +37,7 @@ class ReadFragment : Fragment() {
                 else -> currency_array[0]
             }
             binding.readDate.text = date
+            binding.readTime.text = time
             binding.readAmount.movementMethod = ScrollingMovementMethod()
             binding.readAmount.text = "${it.amount.toPlainString()} $currency"
             binding.readDescription.text = it.description

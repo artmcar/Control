@@ -55,6 +55,11 @@
     <string name="difference">Difference:</string>
     <string name="all_incomes">All incomes:</string>
     <string name="all_expenses">All expenses:</string>
+    <string name="hh">HH</string>
+    <string name="time_colon">:</string>
+    <string name="ss">ss</string>
+    <string name="mm">mm</string>
+    <string name="time">Time:</string>
 
     <string-array name="currency">
         <item>₽</item>

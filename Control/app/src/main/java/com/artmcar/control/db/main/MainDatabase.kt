@@ -1,12 +1,20 @@
+//MainDatabase
+
 package com.artmcar.control.db.main
 
 import android.content.Context
+import androidx.room.AutoMigration
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 
-@Database(entities = [MainFields::class], version = 5, exportSchema = false)
+@Database(entities = [MainFields::class],
+    version = 6,
+    autoMigrations = [
+        AutoMigration (from = 5, to = 6)
+    ]
+)
 @TypeConverters(Converters::class)
 abstract class MainDatabase: RoomDatabase() {
     abstract fun mainDao(): MainDao
@@ -25,7 +33,7 @@ abstract class MainDatabase: RoomDatabase() {
                     context.applicationContext,
                     MainDatabase::class.java,
                     "control_database"
-                ).fallbackToDestructiveMigration().build()
+                ).build()
                 INSTANCE = instance
                 return instance
             }
