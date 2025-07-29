@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
     private lateinit var eurViewModel: EurViewModel
+    private lateinit var usdViewModel: UsdViewModel
 
 
 
@@ -88,7 +89,7 @@ class MainActivity : AppCompatActivity() {
 
         val usdDao = CurrencyDatabase.getDatabase(applicationContext).usdRateDao()
         val usdFactory = UsdViewModelFactory(usdDao)
-        val usdViewModel = ViewModelProvider(this, usdFactory).get(UsdViewModel::class.java)
+        usdViewModel = ViewModelProvider(this, usdFactory).get(UsdViewModel::class.java)
         usdViewModel.compareRates { isIncreased, currentRate ->
             runOnUiThread {
                 updateUsdUI(isIncreased, currentRate)
