@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <string-array name="expenses_type">
+        <item>Другое</item>
+        <item>Доставка еды</item>
+        <item>Здоровье</item>
+        <item>Канцтовары</item>
+        <item>Обед</item>
+        <item>Одежда</item>
+        <item>Парикмахерская</item>
+        <item>Продукты питания и прочие товары</item>
+        <item>Развлечения</item>
+        <item>Связь</item>
+        <item>Техника</item>
+        <item>Транспорт</item>
+    </string-array>
+
+    <string-array name="months">
+        <item>Янв.</item>
+        <item>Фев.</item>
+        <item>Мар.</item>
+        <item>Апр.</item>
+        <item>Май</item>
+        <item>Июн.</item>
+        <item>Июл.</item>
+        <item>Авг.</item>
+        <item>Сен.</item>
+        <item>Окт.</item>
+        <item>Ноя.</item>
+        <item>Дек.</item>
+    </string-array>
+
+
     <string name="app_name">Control</string>
     <string name="there_s_nothing_here_yet">Здесь пока пусто.</string>
     <string name="amount">Сумма</string>
@@ -55,37 +87,12 @@
     <string name="difference">Разница:</string>
     <string name="all_incomes">Всего доходов:</string>
     <string name="all_expenses">Всего расходов:</string>
-
-    <string-array name="expenses_type">
-        <item>Другое</item>
-        <item>Доставка еды</item>
-        <item>Здоровье</item>
-        <item>Канцтовары</item>
-        <item>Обед</item>
-        <item>Одежда</item>
-        <item>Парикмахерская</item>
-        <item>Продукты питания и прочие товары</item>
-        <item>Развлечения</item>
-        <item>Связь</item>
-        <item>Техника</item>
-        <item>Транспорт</item>
-    </string-array>
-
-    <string-array name="months">
-        <item>Янв.</item>
-        <item>Фев.</item>
-        <item>Мар.</item>
-        <item>Апр.</item>
-        <item>Май</item>
-        <item>Июн.</item>
-        <item>Июл.</item>
-        <item>Авг.</item>
-        <item>Сен.</item>
-        <item>Окт.</item>
-        <item>Ноя.</item>
-        <item>Дек.</item>
-    </string-array>
-
+    <string name="hh">ЧЧ</string>
+    <string name="time_colon">:</string>
+    <string name="ss">сс</string>
+    <string name="mm">мм</string>
+    <string name="time">Время:</string>
+    <string name="delete">Удалить</string>
 
 
 </resources>
