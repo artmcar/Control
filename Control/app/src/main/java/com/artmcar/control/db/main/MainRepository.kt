@@ -15,6 +15,27 @@ class MainRepository(private val mainDao: MainDao) {
 
     val getByBackDate: LiveData<List<MainFields>> = mainDao.getByBackDate()
 
+    val getByRubByDate: LiveData<List<MainFields>> = mainDao.getByRubByDate()
+    val getByRubByBackDate: LiveData<List<MainFields>> = mainDao.getByRubByBackDate()
+    val getByRubByAmount: LiveData<List<MainFields>> = mainDao.getByRubByAmount()
+    val getByRubByBackAmount: LiveData<List<MainFields>> = mainDao.getByRubByBackAmount()
+
+    val getByUsdByDate: LiveData<List<MainFields>> = mainDao.getByUsdByDate()
+    val getByUsdByBackDate: LiveData<List<MainFields>> = mainDao.getByUsdByBackDate()
+    val getByUsdByAmount: LiveData<List<MainFields>> = mainDao.getByUsdByAmount()
+    val getByUsdByBackAmount: LiveData<List<MainFields>> = mainDao.getByUsdByBackAmount()
+
+    val getByEurByDate: LiveData<List<MainFields>> = mainDao.getByEurByDate()
+    val getByEurByBackDate: LiveData<List<MainFields>> = mainDao.getByEurByBackDate()
+    val getByEurByAmount: LiveData<List<MainFields>> = mainDao.getByEurByAmount()
+    val getByEurByBackAmount: LiveData<List<MainFields>> = mainDao.getByEurByBackAmount()
+
+    val getByAmdByDate: LiveData<List<MainFields>> = mainDao.getByAmdByDate()
+    val getByAmdByBackDate: LiveData<List<MainFields>> = mainDao.getByAmdByBackDate()
+    val getByAmdByAmount: LiveData<List<MainFields>> = mainDao.getByAmdByAmount()
+    val getByAmdByBackAmount: LiveData<List<MainFields>> = mainDao.getByAmdByBackAmount()
+
+
     suspend fun insertExpense(mainFields: MainFields){
         mainDao.insertExpense(mainFields)
     }

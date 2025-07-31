@@ -58,6 +58,10 @@
     <string name="parallel_date">Похоже, что вы живете в параллельной вселенной! Поменяйте дату</string>
     <string name="sort_by_date">Сортировка по дате</string>
     <string name="sort_by_amount">Сортировка по сумме</string>
+    <string name="sort_by_rub">Сортировка по RUB</string>
+    <string name="sort_by_usd">Сортировка по USD</string>
+    <string name="sort_by_eur">Сортировка по EUR</string>
+    <string name="sort_by_amd">Сортировка по AMD</string>
     <string name="delete_all">Удалить всё</string>
     <string name="allert_yes">Да</string>
     <string name="allert_no">Нет</string>

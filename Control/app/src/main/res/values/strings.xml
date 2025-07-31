@@ -64,6 +64,10 @@
     <string name="parallel_date">It seems you\'re living in a parallel universe! Change the date</string>
     <string name="sort_by_date">Sort by date</string>
     <string name="sort_by_amount">Sort by amount</string>
+    <string name="sort_by_rub">Sort by RUB</string>
+    <string name="sort_by_usd">Sort by USD</string>
+    <string name="sort_by_eur">Sort by EUR</string>
+    <string name="sort_by_amd">Sort by AMD</string>
     <string name="delete_all">Delete all</string>
     <string name="allert_yes">Yes</string>
     <string name="allert_no">No</string>
@@ -99,6 +103,7 @@
     <string name="mm">mm</string>
     <string name="time">Time:</string>
     <string name="delete">Delete</string>
+
 
 
 </resources>

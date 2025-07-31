@@ -39,6 +39,10 @@ class MainFragment : Fragment() {
 
     private var selectedSortDate = 0
     private var selectedSortAmount = 0
+    private var selectedSortByRub = 0
+    private var selectedSortByUsd = 0
+    private var selectedSortByEur = 0
+    private var selectedSortByAmd = 0
 
 
     override fun onCreateView(
@@ -122,6 +126,106 @@ class MainFragment : Fragment() {
                     }
                     true
                 }
+                R.id.action_sort_by_rub -> {
+                    when(selectedSortByRub) {
+                        0 -> {
+                            getByRubByDate()
+                            selectedSortByRub = 1
+                        }
+                        1 -> {
+                            getByRubByBackDate()
+                            selectedSortByRub = 2
+                        }
+                        2 ->{
+                            getByRubByAmount()
+                            selectedSortByRub = 3
+                        }
+                        3 -> {
+                            getByRubByBackAmount()
+                            selectedSortByRub = 0
+                        }
+                        else -> {
+                            getByRubByDate()
+                            selectedSortByRub = 1
+                        }
+                    }
+                    true
+                }
+                R.id.action_sort_by_usd -> {
+                    when(selectedSortByUsd) {
+                        0 -> {
+                            getByUsdByDate()
+                            selectedSortByUsd = 1
+                        }
+                        1 -> {
+                            getByUsdByBackDate()
+                            selectedSortByUsd = 2
+                        }
+                        2 ->{
+                            getByUsdByAmount()
+                            selectedSortByUsd = 3
+                        }
+                        3 -> {
+                            getByUsdByBackAmount()
+                            selectedSortByUsd = 0
+                        }
+                        else -> {
+                            getByUsdByDate()
+                            selectedSortByUsd = 1
+                        }
+                    }
+                    true
+                }
+                R.id.action_sort_by_eur -> {
+                    when(selectedSortByEur) {
+                        0 -> {
+                            getByEurByDate()
+                            selectedSortByEur = 1
+                        }
+                        1 -> {
+                            getByEurByBackDate()
+                            selectedSortByEur = 2
+                        }
+                        2 ->{
+                            getByEurByAmount()
+                            selectedSortByEur = 3
+                        }
+                        3 -> {
+                            getByEurByBackAmount()
+                            selectedSortByEur = 0
+                        }
+                        else -> {
+                            getByEurByDate()
+                            selectedSortByEur = 1
+                        }
+                    }
+                    true
+                }
+                R.id.action_sort_by_amd -> {
+                    when(selectedSortByAmd) {
+                        0 -> {
+                            getByAmdByDate()
+                            selectedSortByAmd = 1
+                        }
+                        1 -> {
+                            getByAmdByBackDate()
+                            selectedSortByAmd = 2
+                        }
+                        2 ->{
+                            getByAmdByAmount()
+                            selectedSortByAmd = 3
+                        }
+                        3 -> {
+                            getByAmdByBackAmount()
+                            selectedSortByAmd = 0
+                        }
+                        else -> {
+                            getByAmdByDate()
+                            selectedSortByAmd = 1
+                        }
+                    }
+                    true
+                }
                 R.id.action_unlock -> {
                     if (pin == null) {
                         findNavController().navigate(R.id.action_mainFragment_to_pinSetupFragment)
@@ -181,6 +285,90 @@ class MainFragment : Fragment() {
 
     private fun getByAmount() {
         mainViewModel.getByAmount.observe(viewLifecycleOwner){ sorted ->
+            adapter.setData(sorted)
+        }
+    }
+
+    private fun getByRubByDate() {
+        mainViewModel.getByRubByDate.observe(viewLifecycleOwner){ sorted ->
+            adapter.setData(sorted)
+        }
+    }
+    private fun getByRubByBackDate() {
+        mainViewModel.getByRubByBackDate.observe(viewLifecycleOwner){ sorted ->
+            adapter.setData(sorted)
+        }
+    }
+    private fun getByRubByAmount() {
+        mainViewModel.getByRubByAmount.observe(viewLifecycleOwner){ sorted ->
+            adapter.setData(sorted)
+        }
+    }
+    private fun getByRubByBackAmount() {
+        mainViewModel.getByRubByBackAmount.observe(viewLifecycleOwner){ sorted ->
+            adapter.setData(sorted)
+        }
+    }
+
+    private fun getByUsdByDate() {
+        mainViewModel.getByUsdByDate.observe(viewLifecycleOwner){ sorted ->
+            adapter.setData(sorted)
+        }
+    }
+    private fun getByUsdByBackDate() {
+        mainViewModel.getByUsdByBackDate.observe(viewLifecycleOwner){ sorted ->
+            adapter.setData(sorted)
+        }
+    }
+    private fun getByUsdByAmount() {
+        mainViewModel.getByUsdByAmount.observe(viewLifecycleOwner){ sorted ->
+            adapter.setData(sorted)
+        }
+    }
+    private fun getByUsdByBackAmount() {
+        mainViewModel.getByUsdByBackAmount.observe(viewLifecycleOwner){ sorted ->
+            adapter.setData(sorted)
+        }
+    }
+
+    private fun getByEurByDate() {
+        mainViewModel.getByEurByDate.observe(viewLifecycleOwner){ sorted ->
+            adapter.setData(sorted)
+        }
+    }
+    private fun getByEurByBackDate() {
+        mainViewModel.getByEurByBackDate.observe(viewLifecycleOwner){ sorted ->
+            adapter.setData(sorted)
+        }
+    }
+    private fun getByEurByAmount() {
+        mainViewModel.getByEurByAmount.observe(viewLifecycleOwner){ sorted ->
+            adapter.setData(sorted)
+        }
+    }
+    private fun getByEurByBackAmount() {
+        mainViewModel.getByEurByBackAmount.observe(viewLifecycleOwner){ sorted ->
+            adapter.setData(sorted)
+        }
+    }
+
+    private fun getByAmdByDate() {
+        mainViewModel.getByAmdByDate.observe(viewLifecycleOwner){ sorted ->
+            adapter.setData(sorted)
+        }
+    }
+    private fun getByAmdByBackDate() {
+        mainViewModel.getByAmdByBackDate.observe(viewLifecycleOwner){ sorted ->
+            adapter.setData(sorted)
+        }
+    }
+    private fun getByAmdByAmount() {
+        mainViewModel.getByAmdByAmount.observe(viewLifecycleOwner){ sorted ->
+            adapter.setData(sorted)
+        }
+    }
+    private fun getByAmdByBackAmount() {
+        mainViewModel.getByAmdByBackAmount.observe(viewLifecycleOwner){ sorted ->
             adapter.setData(sorted)
         }
     }

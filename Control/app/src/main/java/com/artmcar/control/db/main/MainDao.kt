@@ -42,4 +42,52 @@ interface MainDao {
 
     @Query("SELECT amount FROM expenses WHERE operation = 'Income' AND currency = :currency")
     fun getIncomesAmountsByCurrency(currency: String): LiveData<List<BigDecimal>>
+
+    @Query("SELECT * FROM expenses WHERE currency = 'RUB' ORDER BY year DESC, month DESC, day DESC, hour DESC, minute DESC, second DESC")
+    fun getByRubByDate(): LiveData<List<MainFields>>
+
+    @Query("SELECT * FROM expenses WHERE currency = 'RUB' ORDER BY year ASC, month ASC, day ASC, hour ASC, minute ASC, second ASC")
+    fun getByRubByBackDate(): LiveData<List<MainFields>>
+
+    @Query("SELECT * FROM expenses WHERE currency = 'RUB' ORDER BY amount * 1 DESC")
+    fun getByRubByAmount(): LiveData<List<MainFields>>
+
+    @Query("SELECT * FROM expenses WHERE currency = 'RUB' ORDER BY amount * 1 ASC")
+    fun getByRubByBackAmount(): LiveData<List<MainFields>>
+
+    @Query("SELECT * FROM expenses WHERE currency = 'USD' ORDER BY year DESC, month DESC, day DESC, hour DESC, minute DESC, second DESC")
+    fun getByUsdByDate(): LiveData<List<MainFields>>
+
+    @Query("SELECT * FROM expenses WHERE currency = 'USD' ORDER BY year ASC, month ASC, day ASC, hour ASC, minute ASC, second ASC")
+    fun getByUsdByBackDate(): LiveData<List<MainFields>>
+
+    @Query("SELECT * FROM expenses WHERE currency = 'USD' ORDER BY amount * 1 DESC")
+    fun getByUsdByAmount(): LiveData<List<MainFields>>
+
+    @Query("SELECT * FROM expenses WHERE currency = 'USD' ORDER BY amount * 1 ASC")
+    fun getByUsdByBackAmount(): LiveData<List<MainFields>>
+
+    @Query("SELECT * FROM expenses WHERE currency = 'EUR' ORDER BY year DESC, month DESC, day DESC, hour DESC, minute DESC, second DESC")
+    fun getByEurByDate(): LiveData<List<MainFields>>
+
+    @Query("SELECT * FROM expenses WHERE currency = 'EUR' ORDER BY year ASC, month ASC, day ASC, hour ASC, minute ASC, second ASC")
+    fun getByEurByBackDate(): LiveData<List<MainFields>>
+
+    @Query("SELECT * FROM expenses WHERE currency = 'EUR' ORDER BY amount * 1 DESC")
+    fun getByEurByAmount(): LiveData<List<MainFields>>
+
+    @Query("SELECT * FROM expenses WHERE currency = 'EUR' ORDER BY amount * 1 ASC")
+    fun getByEurByBackAmount(): LiveData<List<MainFields>>
+
+    @Query("SELECT * FROM expenses WHERE currency = 'AMD' ORDER BY year DESC, month DESC, day DESC, hour DESC, minute DESC, second DESC")
+    fun getByAmdByDate(): LiveData<List<MainFields>>
+
+    @Query("SELECT * FROM expenses WHERE currency = 'AMD' ORDER BY year ASC, month ASC, day ASC, hour ASC, minute ASC, second ASC")
+    fun getByAmdByBackDate(): LiveData<List<MainFields>>
+
+    @Query("SELECT * FROM expenses WHERE currency = 'AMD' ORDER BY amount * 1 DESC")
+    fun getByAmdByAmount(): LiveData<List<MainFields>>
+
+    @Query("SELECT * FROM expenses WHERE currency = 'AMD' ORDER BY amount * 1 ASC")
+    fun getByAmdByBackAmount(): LiveData<List<MainFields>>
 }

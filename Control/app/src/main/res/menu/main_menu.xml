@@ -12,6 +12,26 @@
         android:title="@string/sort_by_amount"
         app:showAsAction="never" />
     <item
+        android:id="@+id/action_sort_by_rub"
+        android:icon="@drawable/ic_sort"
+        android:title="@string/sort_by_rub"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_sort_by_usd"
+        android:icon="@drawable/ic_sort"
+        android:title="@string/sort_by_usd"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_sort_by_eur"
+        android:icon="@drawable/ic_sort"
+        android:title="@string/sort_by_eur"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_sort_by_amd"
+        android:icon="@drawable/ic_sort"
+        android:title="@string/sort_by_amd"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_unlock"
         android:icon="@drawable/ic_unlock"
         android:title="@string/lock"
