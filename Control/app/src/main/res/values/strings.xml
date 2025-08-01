@@ -49,7 +49,8 @@
     <string name="type_expense_colon">Expense type:</string>
     <string name="description">Description</string>
     <string name="description_colon">Description:</string>
-    <string name="select_the_type_of_expenses">Select the type of expenses</string>
+    <string name="select_the_type_of_expense">Select the type of expense</string>
+    <string name="select_the_type_of_income">Select the type of income</string>
     <string name="year">Year</string>
     <string name="month">Month</string>
     <string name="day">Day</string>

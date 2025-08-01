@@ -98,6 +98,14 @@ class AddFragment : Fragment() {
                 else -> false
             }
         }
+        binding.expIncSwitch.setOnClickListener {
+            if (binding.expIncSwitch.isChecked){
+                binding.typeTv.text = resources.getString(R.string.select_the_type_of_income)
+            }
+            else{
+                binding.typeTv.text = resources.getString(R.string.select_the_type_of_expense)
+            }
+        }
     }
 
     private fun insertDataToDatabase() {
