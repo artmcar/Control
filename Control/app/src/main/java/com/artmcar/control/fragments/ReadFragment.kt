@@ -35,6 +35,8 @@ class ReadFragment : Fragment() {
         val date_array = context.resources.getStringArray(R.array.months)
         val currency_array = context.resources.getStringArray(R.array.currency)
 
+        binding.readDescription.movementMethod = ScrollingMovementMethod()
+
         item?.let {
             val is_expense = it.operation == "Expense"
             val date = "${it.day} ${date_array[it.month - 1]} ${it.year}"
